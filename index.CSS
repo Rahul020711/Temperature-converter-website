@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(204, 209, 209);
+    padding: 3rem 5rem 0 5rem;
+    
+}
+h2{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: rgb(55, 25, 25);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: .2rem solid black;
+    background-color: rgb(50, 214, 214);
+    background-clip: content-box;
+    text-align: center;
+    border-radius: 20%;
+    height: 40rem;
+    
+  }
+
+  .cel,.kel,.fah{
+    display: inline-block;
+    font-family: 'Rubik Dirt', cursive;
+    color: rgb(0, 0, 0);
+  }
+  .inp{
+    padding: .5rem 1.5rem;
+    text-align: center;
+    color: rgb(255, 0, 0);
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  label{
+    font-size: 1.8rem;
+    color: black;
+    margin-left: .8rem;
+  }
+
+  
+  @media screen and (max-width: 1070px) {
+    body {
+      padding: 3rem 2rem 0 2rem;
+    }
+  
+    .container {
+      height: auto;
+      border-radius: 0;
+    }
+    
+    .inp {
+      font-size: 0.8rem;
+    }
+  
+    label {
+      font-size: 1.4rem;
+    }
+  }
+  

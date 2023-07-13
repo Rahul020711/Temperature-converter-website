@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>TEMPERATURE CONVERTER</h1>
+
+        <div class="celtofah">
+            <h2>Celsius To Kelvin</h2>
+            <div class="cel">
+                <label>CELSIUS</label>
+                <input type="number" value="0" id="celsius" class="inp">
+            </div>
+            <div class="kel">
+                <label>KELVIN</label>
+                <input type="number" value="273.15" id="kelvin" class="inp">
+            </div>
+        </div>
+
+        <div class="celtofah">
+            <h2>Fahrenheit To Celsius</h2>
+            <div class="fah">
+                <label>FAHRENHEIT</label>
+                <input type="number" value="32" id="fahrenheit" class="inp">
+            </div>
+            <div class="cel">
+                <label>CELSIUS</label>
+                <input type="number" value="0" id="cel" class="inp">
+            </div>
+        </div>
+
+        <div class="celtofah">
+            <h2>Fahrenheit To Kelvin</h2>
+            <div class="fah">
+                <label>FAHRENHEIT</label>
+                <input type="number" value="0" id="fah" class="inp">
+            </div>
+            <div class="kel">
+                <label>KELVIN</label>
+                <input type="number" value="255.37" id="kel" class="inp">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var celsinp = document.getElementById("celsius");
+            var kelinp = document.getElementById("kelvin");
+            var fahinp = document.getElementById("fahrenheit");
+            var celsinp2 = document.getElementById("cel");
+            var fahKelinp = document.getElementById("fah");
+            var kelinp2 = document.getElementById("kel");
+
+            celsinp.addEventListener('input', function () {
+                let c = parseFloat(this.value);
+                let k = c + 273.15;
+                if (!Number.isInteger(k)) {
+                    k = k.toFixed(3);
+                }
+                kelinp.value = k;
+            });
+
+
+            kelinp.addEventListener('input', function () {
+                let k = (this.value);
+                let c = k - 273.15;
+                if (!Number.isInteger(c)) {
+                    c = c.toFixed(3);
+                }
+                celsinp.value = c;
+            });
+
+            fahinp.addEventListener('input', function () {
+                let f = (this.value);
+                let c = (f - 32) * 5 / 9;
+                if (!Number.isInteger(c)) {
+                    c = c.toFixed(3);
+                }
+                celsinp2.value = c;
+            });
+
+            celsinp2.addEventListener('input', function () {
+                let c = (this.value);
+                let f = (c * 9 / 5) + 32;
+                if (!Number.isInteger(f)) {
+                    f = f.toFixed(3);
+                }
+                fahinp.value = f;
+            });
+
+            fahKelinp.addEventListener('input', function () {
+                let f = (this.value);
+                let k = (f - 32) * 5 / 9 + 273.15;
+                if (!Number.isInteger(k)) {
+                    k = k.toFixed(3);
+                }
+                kelinp2.value = k;
+            });
+
+            kelinp2.addEventListener('input', function () {
+                let k = (this.value);
+                let f = (k - 273.15) * 9 / 5 + 32;
+                if (!Number.isInteger(f)) {
+                    f = f.toFixed(3);
+                }
+                fahKelinp.value = f;
+            });
+        });
+    </script>
+</body>
+
+</html>
